@@ -26,24 +26,36 @@ body {
 }
 
 #category-menu, #clothing-menu, #controls {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-around; /* Các nút hàng đầu lên trên */
     align-items: center;
 }
 
 button {
-    margin: 5px;
-    padding: 10px;
-    width: 150px; /* Chiều rộng */
+    margin: 10px;
+    padding: 15px;
+    width: 130px; /* Chiều rộng */
     height: 50px; /* Chiều cao */
     border-radius: 5px; /* Bo góc viền */
-    background-color: #27ffbe;
     color: rgb(0, 95, 63);
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px; /*kích cỡ chữ */
     text-align: center;
+    position: relative;
+}
+
+
+button img{
+    position: absolute;
+    top: -20%;
+    right: 50%;
+    /*left: 0px; /* Điều chỉnh vị trí của hình ảnh */
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    width: 140px; /* Điều chỉnh kích thước hình ảnh */
+    height: auto; /* Giữ tỷ lệ khung hình */
 }
 
 button:hover {
@@ -61,10 +73,10 @@ button:hover {
 }
 
 .clothing-item{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
-    margin: 2px;
+    margin: px;
     border: 1px solid #ddd;
     transition: border-color 0.3s ease; /* Hiệu ứng khi di chuột qua */
 }
@@ -74,8 +86,8 @@ button:hover {
     border-color: #007763; /* Màu viền khi di chuột qua */
 }
 #category-menu button {
-    margin: 5px; /* Khoảng cách giữa các nút */
-    padding: 10px 20px; /* Kích thước nút */
+    margin: 10px; /* Khoảng cách giữa các nút */
+    /*padding: 15px 20px; /* Kích thước nút */
     border-radius: 5px;
     background-color: #27ffbe;
     color: rgb(0, 95, 32);
@@ -87,5 +99,55 @@ button:hover {
     background-color: #00a171; /* Màu nền khi di chuột qua */
 }
 
+.hidden {
+    display: none;
+}
 
-  
+#share-container {
+    position: relative;
+}
+
+#share-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 10px;
+}
+
+#share-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#share-menu ul li {
+    margin-bottom: 5px;
+}
+
+#share-menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+#share-menu ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+#background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Đặt z-index để nó nằm sau canvas */
+    width: 100%;
+    height: 100%;
+}
+
+#background-image {
+    width: 100%;
+    height: 100%;
+}
