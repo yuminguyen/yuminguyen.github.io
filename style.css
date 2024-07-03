@@ -1,0 +1,91 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #dcfff7;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#canvas-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #ddd; /* Đổi màu viền */
+    border-radius: 8px; /* Bo góc viền */
+    overflow: hidden; /* Ẩn các nội dung bên ngoài */
+}
+
+#category-menu, #clothing-menu, #controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around; /* Các nút hàng đầu lên trên */
+    align-items: center;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    width: 150px; /* Chiều rộng */
+    height: 50px; /* Chiều cao */
+    border-radius: 5px; /* Bo góc viền */
+    background-color: #27ffbe;
+    color: rgb(0, 95, 63);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /*kích cỡ chữ */
+    text-align: center;
+}
+
+button:hover {
+    background-color: #00a171;
+}
+
+.clothing-menu {
+    width: 100%; /* Chiều rộng của menu quần áo */
+    max-width: 500px; /* Giới hạn chiều rộng tối đa */
+    height: 150px; /* Chiều cao của menu quần áo */
+    overflow-y: auto; /* Cho phép cuộn khi tràn */
+    border: 1px solid #ddd; /* Viền xám nhạt */
+    border-radius: 8px; /* Bo tròn các góc */
+    padding: 5px; /* Khoảng cách từ viền vào nội dung */
+}
+
+.clothing-item{
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin: 2px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease; /* Hiệu ứng khi di chuột qua */
+}
+
+.clothing-item:hover {
+    border: 1px solid #4CAF50;
+    border-color: #007763; /* Màu viền khi di chuột qua */
+}
+#category-menu button {
+    margin: 5px; /* Khoảng cách giữa các nút */
+    padding: 10px 20px; /* Kích thước nút */
+    border-radius: 5px;
+    background-color: #27ffbe;
+    color: rgb(0, 95, 32);
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng màu nền */
+}
+
+#category-menu button:hover {
+    background-color: #00a171; /* Màu nền khi di chuột qua */
+}
+
+
+  

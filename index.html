@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Up Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container">
+        <!-- Canvas chính -->
+        <div id="canvas-container">
+            <canvas id="character-canvas" width="500" height="500"></canvas>
+        </div>
+
+        <!-- Danh mục lựa chọn -->
+        <div id="category-menu">
+            <button onclick="selectCategory('hair')">Tóc</button>
+            <button onclick="selectCategory('clothing')">Quần áo</button>
+            <button onclick="selectCategory('accessories')">Phụ kiện</button>
+            <button onclick="selectCategory('background')">Nền</button>
+        </div>
+
+        <!-- Menu trang phục -->
+        <div id="clothing-menu">
+            <!-- Hiển thị các tùy chọn trang phục cho danh mục đã chọn -->
+        </div>
+
+        <!-- Nút điều khiển -->
+        <div id="controls">
+            <button onclick="undoAction()">Quay lại</button>
+            <button onclick="resetCharacter()">Làm mới</button>
+            <button onclick="saveCharacter()">Lưu</button>
+            <button onclick="shareCharacter()">Chia sẻ</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
