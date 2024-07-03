@@ -36,7 +36,7 @@ function loadClothingOptions(category) {
     if (category === 'hair') {
         clothingItems = ['assets/clothing/hairs/shorthair.png','assets/clothing/hairs/longhair.png','assets/clothing/hairs/ponytailhair.png', 'assets/clothing/hairs/Normal.png', 'assets/clothing/hairs/Ponytail.png', 'assets/clothing/hairs/hair_braid.png'];
     } else if (category === 'face'){
-        clothingItems = ['assets/clothing/face/Emotion_angry.png', 'assets/clothing/face/Emotion_normal.png', 'assets/clothing/face/Emotion_sad.png', 'assets/clothing/face/Emotion_shy.png', 'assets/clothing/face/Emotion_surprised.png'];
+        clothingItems = ['assets/clothing/face/Phong_angry.png', 'assets/clothing/face/Phong_happy.png', 'assets/clothing/face/Phong_normal.png', 'assets/clothing/face/Phong_regret.png', 'assets/clothing/face/Phong_sad.png', 'assets/clothing/face/Phong_shy.png', 'assets/clothing/face/Phong_surprised.png', 'assets/clothing/face/Emotion_angry.png', 'assets/clothing/face/Emotion_normal.png', 'assets/clothing/face/Emotion_sad.png', 'assets/clothing/face/Emotion_shy.png', 'assets/clothing/face/Emotion_surprised.png'];
     } else if (category === 'clothing') {
         clothingItems = ['assets/clothing/clothings/hoodie.png','assets/clothing/clothings/normal.png','assets/clothing/clothings/summer.png','assets/clothing/clothings/wedding.png','assets/clothing/clothings/winter.png', 'assets/clothing/clothings/Cloth_normal.png', 'assets/clothing/clothings/Cloth_summer.png', 'assets/clothing/clothings/Cloth_wedding.png', 'assets/clothing/clothings/Cloth_winter.png'];
     } else if (category === 'accessories') {
@@ -110,8 +110,20 @@ function loadBackgroundOptions() {
     });
 }
 
+// Thêm hàm để ẩn các menu trước khi hiển thị menu được chọn
+function hideAllMenus() {
+    const menus = document.querySelectorAll('.menu-container');
+    menus.forEach(menu => {
+        menu.classList.add('hidden');
+    });
+}
+
 function selectCategory(category) {
+
+    hideAllMenus(); // Ẩn tất cả các menu trước khi chọn
+
     const clothingMenu = document.getElementById('clothing-menu');
+    clothingMenu.classList.remove('hidden');
     clothingMenu.innerHTML = '';
     // Hiển thị các tùy chọn trang phục cho danh mục đã chọn
     if (category === 'background'){
@@ -243,6 +255,7 @@ function resetCharacter() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     loadCharacter();
     selectHair = null;
+    selectFace = null;
     selectClothing = null;
     selectAccessories = null;
     selectBackground = null;
@@ -302,7 +315,7 @@ function shareOnFacebook() {
 
     FB.ui({
         method: 'share',
-        href: 'your-website-url', // Replace with your website URL
+        href: 'https://www.facebook.com/', // Replace with your website URL
         hashtag: '#characterdesign',
         quote: 'Check out my character!',
         picture: imageData,

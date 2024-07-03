@@ -25,70 +25,83 @@ body {
     overflow: hidden; /* Ẩn các nội dung bên ngoài */
 }
 
-#category-menu, #clothing-menu, #controls {
+#category-menu, #controls {
     margin-top: 20px;
     display: flex;
     justify-content: space-around; /* Các nút hàng đầu lên trên */
     align-items: center;
 }
 
-button {
-    margin: 10px;
-    padding: 15px;
-    width: 130px; /* Chiều rộng */
-    height: 50px; /* Chiều cao */
-    border-radius: 5px; /* Bo góc viền */
-    color: rgb(0, 95, 63);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 16px; /*kích cỡ chữ */
-    text-align: center;
-    position: relative;
-}
-
-
-button img{
-    position: absolute;
-    top: -20%;
-    right: 50%;
-    /*left: 0px; /* Điều chỉnh vị trí của hình ảnh */
-    transform: translateY(-50%);
-    transform: translateX(50%);
-    width: 140px; /* Điều chỉnh kích thước hình ảnh */
-    height: auto; /* Giữ tỷ lệ khung hình */
-}
-
-button:hover {
-    background-color: #00a171;
-}
-
-.clothing-menu {
-    width: 100%; /* Chiều rộng của menu quần áo */
-    max-width: 500px; /* Giới hạn chiều rộng tối đa */
-    height: 150px; /* Chiều cao của menu quần áo */
-    overflow-y: auto; /* Cho phép cuộn khi tràn */
+#clothing-menu{
+    width: 720px; /* Chiều rộng của menu quần áo */
+    height: 110px; /* Chiều cao của menu quần áo */
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    overflow-y: hidden; /* Ẩn cuộn dọc */
     border: 1px solid #ddd; /* Viền xám nhạt */
     border-radius: 8px; /* Bo tròn các góc */
     padding: 5px; /* Khoảng cách từ viền vào nội dung */
+    white-space: nowrap; /* Đảm bảo các mục không xuống dòng */
+    align-items: center;  
+}
+
+button {
+    margin: 10px;
+    padding: 15px;
+    width: 155px; /* Chiều rộng */
+    height: 70px; /* Chiều cao */
+    border-radius: 20px; /* Bo góc viền */
+    color: rgb(0, 95, 63);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px; /*kích cỡ chữ */
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+button img{
+    position: absolute;
+    top: -5%;
+    right: 49%;
+    /*left: 0px; /* Điều chỉnh vị trí của hình ảnh */
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    width: 105%; /* Điều chỉnh kích thước hình ảnh */
+    height: auto; /* Giữ tỷ lệ khung hình */
+    object-fit: cover;
+}
+
+button:hover {
+    /*background-color: #cc4100;*/
+    border-color: #cc4100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    border-color: #cc4100;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
 }
 
 .clothing-item{
     width: 100px;
     height: 100px;
     cursor: pointer;
-    margin: px;
+    margin: 5px;
+    display: inline-block; /* Hiển thị các mục theo hàng ngang */
     border: 1px solid #ddd;
     transition: border-color 0.3s ease; /* Hiệu ứng khi di chuột qua */
 }
 
 .clothing-item:hover {
     border: 1px solid #4CAF50;
-    border-color: #007763; /* Màu viền khi di chuột qua */
+    border-color: #cc4100; /* Màu viền khi di chuột qua */
 }
 #category-menu button {
     margin: 10px; /* Khoảng cách giữa các nút */
     /*padding: 15px 20px; /* Kích thước nút */
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #27ffbe;
     color: rgb(0, 95, 32);
     cursor: pointer;
@@ -96,7 +109,7 @@ button:hover {
 }
 
 #category-menu button:hover {
-    background-color: #00a171; /* Màu nền khi di chuột qua */
+    background-color: #cc4100; /* Màu nền khi di chuột qua */
 }
 
 .hidden {
@@ -135,7 +148,7 @@ button:hover {
 }
 
 #share-menu ul li a:hover {
-    background-color: #f0f0f0;
+    background-color: #cc4100;
 }
 
 #background-container {
