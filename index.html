@@ -19,6 +19,9 @@
 
         <!-- Danh mục lựa chọn -->
         <div id="category-menu">
+            <button onclick="selectCategory('skin')">
+                <img src="assets/button/skin.png" alt="Skin Image">Da
+            </button>
             <button onclick="selectCategory('hair')">
                 <img src="assets/button/hair.png" alt="Hair Image">Tóc
             </button>
@@ -30,6 +33,9 @@
             </button>
             <button onclick="selectCategory('accessories')">
                 <img src="assets/button/details.png" alt="Accessories Image">Phụ kiện
+            </button>
+            <button onclick="selectCategory('foreground')">
+                <img src="assets/button/foreground.png" alt="Foreground Image">Nền trước
             </button>
             <button onclick="selectCategory('background')">
                 <img src="assets/button/background.png" alt="Background Image">Nền
@@ -43,6 +49,9 @@
 
         <!-- Nút điều khiển -->
         <div id="controls">
+            <!-- <button onclick="randomizeOptions()">
+                <img src="assets/button/random.png" alt="Random Image">Ngẫu nhiên
+            </button> -->
             <button onclick="resetCharacter()">
                 <img src="assets/button/reset.png" alt="Reset Image">Làm mới
             </button>
@@ -50,18 +59,6 @@
                 <img src="assets/button/save.png" alt="Save Image">Lưu
             </button>
             <!--button onclick="shareCharacter()">Chia sẻ</button>-->
-            <div id="share-container">
-                <button id="share-button" onclick="toggleShareMenu()">
-                    <img src="assets/button/share.png" alt="Share Image">Chia sẻ
-                </button>
-                <div id="share-menu" class="hidden">
-                    <ul>
-                        <li><a href="#" id="share-email">Email</a></li>
-                        <li><a href="#" id="share-facebook">Facebook</a></li>
-                        <li><a href="#" id="share-twitter">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </div>
     <script src="script.js"></script>

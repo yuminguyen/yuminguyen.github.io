@@ -33,7 +33,7 @@ body {
 }
 
 #clothing-menu{
-    width: 720px; /* Chiều rộng của menu quần áo */
+    width: 870px; /* Chiều rộng của menu quần áo */
     height: 110px; /* Chiều cao của menu quần áo */
     overflow-x: auto; /* Cho phép cuộn ngang */
     overflow-y: hidden; /* Ẩn cuộn dọc */
@@ -45,10 +45,10 @@ body {
 }
 
 button {
-    margin: 10px;
-    padding: 15px;
-    width: 155px; /* Chiều rộng */
-    height: 70px; /* Chiều cao */
+    margin: 5px;
+    padding: 5px;
+    width: 120px; /* Chiều rộng */
+    height: 60px; /* Chiều cao */
     border-radius: 20px; /* Bo góc viền */
     color: rgb(0, 95, 63);
     cursor: pointer;
@@ -62,12 +62,12 @@ button {
 
 button img{
     position: absolute;
-    top: -5%;
+    top: -3.5%;
     right: 49%;
     /*left: 0px; /* Điều chỉnh vị trí của hình ảnh */
     transform: translateY(-50%);
     transform: translateX(50%);
-    width: 105%; /* Điều chỉnh kích thước hình ảnh */
+    width: 110%; /* Điều chỉnh kích thước hình ảnh */
     height: auto; /* Giữ tỷ lệ khung hình */
     object-fit: cover;
 }
@@ -99,7 +99,7 @@ button:active {
     border-color: #cc4100; /* Màu viền khi di chuột qua */
 }
 #category-menu button {
-    margin: 10px; /* Khoảng cách giữa các nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
     /*padding: 15px 20px; /* Kích thước nút */
     border-radius: 20px;
     background-color: #27ffbe;
@@ -118,37 +118,6 @@ button:active {
 
 #share-container {
     position: relative;
-}
-
-#share-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    padding: 10px;
-}
-
-#share-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#share-menu ul li {
-    margin-bottom: 5px;
-}
-
-#share-menu ul li a {
-    display: block;
-    text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-}
-
-#share-menu ul li a:hover {
-    background-color: #cc4100;
 }
 
 #background-container {
