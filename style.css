@@ -50,7 +50,7 @@ body {
 
 #clothing-menu{
     width: 90%; /* Chiều rộng của menu quần áo */
-    max-width: 590px;
+    max-width: 600px;
     height: 200px;
     overflow-x: hidden; /* Cho phép cuộn ngang */
     overflow-y: auto; /* Ẩn cuộn dọc */
