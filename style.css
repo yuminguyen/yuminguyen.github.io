@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #dcfff7;
+    width: 100%;
 }
 
 #main-container {
@@ -13,42 +14,62 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1vh;
+    width: 90%; /* Điều chỉnh chiều rộng theo màn hình*/
+    padding-top: 2vh;
+    height: 100%;
 }
 
 #canvas-container {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 80vw;    /* Chiều rộng linh hoạt */
+    height: 80vw;   /* Chiều cao linh hoạt, giữ tỷ lệ vuông */
+    max-width: 500px;   /* Giới hạn tối đa */
+    max-height: 500px;  /* Giới hạn tối đa */
     border: 2px solid #ddd; /* Đổi màu viền */
     border-radius: 8px; /* Bo góc viền */
     overflow: hidden; /* Ẩn các nội dung bên ngoài */
 }
 
-#category-menu, #controls {
-    margin-top: 20px;
+#category-menu{
+    margin-top: 1vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Các nút hàng đầu lên trên */
+    align-items: center;
+    width: 90%; /* Chiều rộng linh hoạt */
+    max-width: 600px;   /* Giới hạn tối đa */
+}
+
+#controls{
+    margin-top: 1vh;
     display: flex;
     justify-content: space-around; /* Các nút hàng đầu lên trên */
     align-items: center;
 }
 
 #clothing-menu{
-    width: 870px; /* Chiều rộng của menu quần áo */
-    height: 110px; /* Chiều cao của menu quần áo */
-    overflow-x: auto; /* Cho phép cuộn ngang */
-    overflow-y: hidden; /* Ẩn cuộn dọc */
+    width: 90%; /* Chiều rộng của menu quần áo */
+    max-width: 590px;
+    height: 200px;
+    overflow-x: hidden; /* Cho phép cuộn ngang */
+    overflow-y: auto; /* Ẩn cuộn dọc */
     border: 1px solid #ddd; /* Viền xám nhạt */
     border-radius: 8px; /* Bo tròn các góc */
-    padding: 5px; /* Khoảng cách từ viền vào nội dung */
-    white-space: nowrap; /* Đảm bảo các mục không xuống dòng */
-    align-items: center;  
+    padding: 1px; /* Khoảng cách từ viền vào nội dung */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
 }
 
 button {
-    margin: 5px;
-    padding: 5px;
-    width: 120px; /* Chiều rộng */
-    height: 60px; /* Chiều cao */
+    margin: 1.5vh;
+    padding: 1vh;
+    width: 20vw; /* Chiều rộng linh hoạt */
+    max-width: 120px; /* Giới hạn tối đa */
+    height: 10vh; /* Chiều cao linh hoạt */
+    max-height: 60px; /* Giới hạn tối đa */
     border-radius: 20px; /* Bo góc viền */
     color: rgb(0, 95, 63);
     cursor: pointer;
@@ -64,16 +85,14 @@ button img{
     position: absolute;
     top: -3.5%;
     right: 49%;
-    /*left: 0px; /* Điều chỉnh vị trí của hình ảnh */
     transform: translateY(-50%);
     transform: translateX(50%);
-    width: 110%; /* Điều chỉnh kích thước hình ảnh */
+    width: 115%; /* Điều chỉnh kích thước hình ảnh */
     height: auto; /* Giữ tỷ lệ khung hình */
-    object-fit: cover;
+    object-fit: contain;
 }
 
 button:hover {
-    /*background-color: #cc4100;*/
     border-color: #cc4100;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -85,27 +104,30 @@ button:active {
 }
 
 .clothing-item{
-    width: 100px;
-    height: 100px;
+    width: 21.3%;    /* Chiều rộng linh hoạt */
+    max-width: 150px;   /* Giới hạn tối đa */
+    height: 65%;  /* Chiều cao linh hoạt */
+    max-height: 150px; /* Giới hạn tối đa */
     cursor: pointer;
-    margin: 5px;
-    display: inline-block; /* Hiển thị các mục theo hàng ngang */
+    margin: 1vh;
     border: 1px solid #ddd;
     transition: border-color 0.3s ease; /* Hiệu ứng khi di chuột qua */
-}
+    }
 
 .clothing-item:hover {
     border: 1px solid #4CAF50;
     border-color: #cc4100; /* Màu viền khi di chuột qua */
 }
 #category-menu button {
-    margin: 5px; /* Khoảng cách giữa các nút */
-    /*padding: 15px 20px; /* Kích thước nút */
+    margin: 1vh; /* Khoảng cách giữa các nút */
     border-radius: 20px;
     background-color: #27ffbe;
     color: rgb(0, 95, 32);
     cursor: pointer;
     transition: background-color 0.3s ease; /* Hiệu ứng màu nền */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #category-menu button:hover {
@@ -114,10 +136,6 @@ button:active {
 
 .hidden {
     display: none;
-}
-
-#share-container {
-    position: relative;
 }
 
 #background-container {
@@ -132,4 +150,14 @@ button:active {
 #background-image {
     width: 100%;
     height: 100%;
+}
+
+#meme-loading{
+    position: absolute; /* Đặt hình ảnh tuyệt đối nằm bên trong clothing-menu */
+    top: 50%;   /* Căn giữa theo chiều dọc */
+    left: 50%;  /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%);   /* Điều chỉnh để căn giữa */
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;    /*Điều chỉnh cho hình ảnh nằm gọn trong khung hình */
 }

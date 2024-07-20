@@ -1,30 +1,13 @@
 let baseCharacterImage;
 let baseCharacterLoaded = false;
 let selectSkin = null;
-let selectHair = null;
+let selectFrontHair = null;
+let selectBackHair = null;
 let selectFace = null;
 let selectClothing = null;
 let selectAccessories = null;
 let selectForeground = null;
 let selectBackground = null;
-
-// let characterOptions = {
-//     background: null,
-//     skin: null,
-//     face: null,
-//     clothing: null,
-//     hair: null,
-//     accessories: null,
-//     foreground: null
-// };
-
-// const skinOption = ['assets/clothing/skins/Phong_skin.png', 'assets/clothing/skins/Le_skin.png', 'assets/clothing/skins/Liz_skin.png', 'assets/clothing/skins/Cus_skin.png'];
-// const faceOption = ['assets/clothing/faces/Phong_normal.png', 'assets/clothing/faces/Phong_happy.png', 'assets/clothing/faces/Phong_angry.png', 'assets/clothing/faces/Phong_regret.png', 'assets/clothing/faces/Phong_sad.png', 'assets/clothing/faces/Phong_shy.png', 'assets/clothing/faces/Phong_surprised.png', 'assets/clothing/faces/Le_normal.png', 'assets/clothing/faces/Le_angry.png', 'assets/clothing/faces/Le_sad.png', 'assets/clothing/faces/Le_shy.png', 'assets/clothing/faces/Le_surprised.png', 'assets/clothing/faces/Liz_emotion_normal.png', 'assets/clothing/faces/Liz_emotion_angry.png', 'assets/clothing/faces/Liz_emotion_sad.png', 'assets/clothing/faces/Liz_emotion_shy.png', 'assets/clothing/faces/Liz_emotion_smile.png', 'assets/clothing/faces/Liz_emotion_suprised.png', 'assets/clothing/faces/Cus_emotion_normal.png', 'assets/clothing/faces/Cus_emotion_angry.png', 'assets/clothing/faces/Cus_emotion_sad.png', 'assets/clothing/faces/Cus_emotion_smile.png', 'assets/clothing/faces/Cus_emotion_surprised.png'];
-// const clothingOption = ['assets/clothing/hairs/Phong_hair_normal.png', 'assets/clothing/hairs/Phong_hair_ponytail.png', 'assets/clothing/hairs/Phong_hair_short.png', 'assets/clothing/hairs/Le_ normal.png', 'assets/clothing/hairs/Le_ponytail.png', 'assets/clothing/hairs/Le_wedding.png', 'assets/clothing/hairs/Liz_hair_normal.png', 'assets/clothing/hairs/Liz_hair_custom.png', 'assets/clothing/hairs/Cus_hair_normal.png', 'assets/clothing/hairs/Cus_hair_braidedbelt.png'];
-// const hairOption = ['assets/clothing/hairs/Phong_hair_normal.png', 'assets/clothing/hairs/Phong_hair_ponytail.png', 'assets/clothing/hairs/Phong_hair_short.png', 'assets/clothing/hairs/Le_ normal.png', 'assets/clothing/hairs/Le_ponytail.png', 'assets/clothing/hairs/Le_wedding.png', 'assets/clothing/hairs/Liz_hair_normal.png', 'assets/clothing/hairs/Liz_hair_custom.png', 'assets/clothing/hairs/Cus_hair_normal.png', 'assets/clothing/hairs/Cus_hair_braidedbelt.png'];
-// const accessoriesOption = ['assets/clothing/accessories/strawhat.png', 'assets/clothing/accessories/Details_bouquet.png', 'assets/clothing/accessories/Details_hat.png'];
-// const foregroundOption = ['assets/clothing/foregrounds/sparkle.png', 'assets/clothing/foregrounds/heart.png', 'assets/clothing/foregrounds/mark.png', 'assets/clothing/foregrounds/point.png', 'assets/clothing/foregrounds/sad.png'];
-// const backgroundOption = ['assets/backgrounds/background1.jpg', 'assets/backgrounds/background2.png', 'assets/backgrounds/background3.jpg','assets/backgrounds/background4.jpg', 'assets/backgrounds/background5.png', 'assets/backgrounds/background7.jpg', 'assets/backgrounds/background8.png', 'assets/backgrounds/background10.jpg', 'assets/backgrounds/background11.jpg'];
 
 function loadCharacter() {
     const canvas = document.getElementById('character-canvas');
@@ -57,8 +40,10 @@ function loadClothingOptions(category) {
         clothingItems = ['assets/clothing/skins/Phong_skin.png', 'assets/clothing/skins/Le_skin.png', 'assets/clothing/skins/Liz_skin.png', 'assets/clothing/skins/Cus_skin.png'];
     } else if (category === 'face'){
         clothingItems = ['assets/clothing/faces/Phong_normal.png', 'assets/clothing/faces/Phong_happy.png', 'assets/clothing/faces/Phong_angry.png', 'assets/clothing/faces/Phong_regret.png', 'assets/clothing/faces/Phong_sad.png', 'assets/clothing/faces/Phong_shy.png', 'assets/clothing/faces/Phong_surprised.png', 'assets/clothing/faces/Le_normal.png', 'assets/clothing/faces/Le_angry.png', 'assets/clothing/faces/Le_sad.png', 'assets/clothing/faces/Le_shy.png', 'assets/clothing/faces/Le_surprised.png', 'assets/clothing/faces/Liz_emotion_normal.png', 'assets/clothing/faces/Liz_emotion_angry.png', 'assets/clothing/faces/Liz_emotion_sad.png', 'assets/clothing/faces/Liz_emotion_shy.png', 'assets/clothing/faces/Liz_emotion_smile.png', 'assets/clothing/faces/Liz_emotion_suprised.png', 'assets/clothing/faces/Cus_emotion_normal.png', 'assets/clothing/faces/Cus_emotion_angry.png', 'assets/clothing/faces/Cus_emotion_sad.png', 'assets/clothing/faces/Cus_emotion_smile.png', 'assets/clothing/faces/Cus_emotion_surprised.png'];
-    } else if(category === 'hair') {
-        clothingItems = ['assets/clothing/hairs/Phong_hair_normal.png', 'assets/clothing/hairs/Phong_hair_ponytail.png', 'assets/clothing/hairs/Phong_hair_short.png', 'assets/clothing/hairs/Le_ normal.png', 'assets/clothing/hairs/Le_ponytail.png', 'assets/clothing/hairs/Le_wedding.png', 'assets/clothing/hairs/Liz_hair_normal.png', 'assets/clothing/hairs/Liz_hair_custom.png', 'assets/clothing/hairs/Cus_hair_normal.png', 'assets/clothing/hairs/Cus_hair_braidedbelt.png'];
+    } else if(category === 'frontHair') {
+        clothingItems = ['assets/clothing/frontHairs/Phong_hair_normal.png', 'assets/clothing/frontHairs/Phong_hair_ponytail.png', 'assets/clothing/frontHairs/Phong_hair_short.png', 'assets/clothing/frontHairs/Le_ normal.png', 'assets/clothing/frontHairs/Le_ponytail.png', 'assets/clothing/frontHairs/Le_wedding.png', 'assets/clothing/frontHairs/Liz_hair_normal.png', 'assets/clothing/frontHairs/Liz_hair_custom.png', 'assets/clothing/frontHairs/Cus_hair_normal.png', 'assets/clothing/frontHairs/Cus_hair_braidedbelt.png'];
+    } else if(category === 'backHair'){
+        clothingItems = ['assets/clothing/back-hairs/Phong_hair_normal2.png', 'assets/clothing/back-hairs/Phong_hair_ponytail2.png', 'assets/clothing/back-hairs/Phong_hair_short2.png', 'assets/clothing/back-hairs/Le_Normal2.png', 'assets/clothing/back-hairs/Le_Ponytail2.png', 'assets/clothing/back-hairs/Le_hair_braid2.png', 'assets/clothing/back-hairs/Liz_hair_normal2.png', 'assets/clothing/back-hairs/Liz_hair_custom2.png']
     } else if (category === 'clothing') {
         clothingItems = ['assets/clothing/clothings/normal.png','assets/clothing/clothings/hoodie.png','assets/clothing/clothings/summer.png','assets/clothing/clothings/wedding.png','assets/clothing/clothings/winter.png', 'assets/clothing/clothings/Cloth_normal.png', 'assets/clothing/clothings/Cloth_summer.png', 'assets/clothing/clothings/Cloth_wedding.png', 'assets/clothing/clothings/Cloth_winter.png', 'assets/clothing/clothings/Liz_clothing_normal.png', 'assets/clothing/clothings/Liz_clothing_shirt.png', 'assets/clothing/clothings/Liz_clothing_summer.png', 'assets/clothing/clothings/Liz_clothing_vest.png', 'assets/clothing/clothings/Liz_clothing_wedding.png', 'assets/clothing/clothings/Liz_clothing_winter.png', 'assets/clothing/clothings/Liz_clothing_wool.png', 'assets/clothing/clothings/Cus_clothing_normal.png', 'assets/clothing/clothings/Cus_clothing_summer.png', 'assets/clothing/clothings/Cus_clothing_wedding.png', 'assets/clothing/clothings/Cus_clothing_wool.png', 'assets/clothing/clothings/Cus_winter_summer.png'];
     } else if (category === 'accessories') {
@@ -80,8 +65,10 @@ function loadClothingOptions(category) {
                 selectFace = (selectFace === itemSrc) ? null : itemSrc;
             } else if (category === 'clothing') {
                 selectClothing = (selectClothing === itemSrc) ? null : itemSrc;
-            } else if(category === 'hair') {
-                selectHair = (selectHair === itemSrc) ? null : itemSrc;
+            } else if(category === 'frontHair') {
+                selectFrontHair = (selectFrontHair === itemSrc) ? null : itemSrc;
+            } else if(category === 'backHair'){
+                selectBackHair = (selectBackHair === itemSrc) ? null : itemSrc;
             } else if (category === 'accessories') {
                 selectAccessories = (selectAccessories === itemSrc) ? null : itemSrc;
             } else if (category === 'foreground') {
@@ -98,8 +85,10 @@ function loadClothingOptions(category) {
                 selectClothing = null;
             } else if (category === 'clothing' && selectClothing === itemSrc) {
                 selectClothing = null;
-            } else if(category === 'hair' && selectHair === itemSrc) {
-                selectHair = null;
+            } else if(category === 'frontHair' && selectFrontHair === itemSrc) {
+                selectFrontHair = null;
+            } else if(category === 'backHair' && selectBackHair === itemSrc){
+                selectBackHair = null;
             } else if (category === 'accessories' && selectAccessories === itemSrc) {
                 selectAccessories = null;
             } else if (category === 'foreground' && selectForeground === itemSrc) {
@@ -187,8 +176,10 @@ function applyClothing(itemSrc, category) {
             selectFace = clothingItem;
         } else if (category === 'clothing'){
             selectClothing = clothingItem;
-        } else if(category === 'hair'){
-            selectHair = clothingItem;
+        } else if(category === 'frontHair'){
+            selectFrontHair = clothingItem;
+        } else if(category === 'backHair'){
+            selectBackHair = clothingItem;
         } else if (category === 'accessories'){
             selectAccessories = clothingItem;
         } else if (category === 'foreground'){
@@ -247,7 +238,6 @@ function redrawCharacter() {
             };
         }
         if (selectFace) {
-            //ctx.drawImage(selectHair, 0, 0, canvas.width, canvas.height);
             const faceImage = new Image();
             faceImage.src = selectFace;
             faceImage.onload = () => {
@@ -262,12 +252,18 @@ function redrawCharacter() {
                 ctx.drawImage(clothingImage, 0, 0, canvas.width, canvas.height);
             };
         }
-        if (selectHair) {
-            //ctx.drawImage(selectHair, 0, 0, canvas.width, canvas.height);
-            const hairImage = new Image();
-            hairImage.src = selectHair;
-            hairImage.onload = () => {
-                ctx.drawImage(hairImage, 0, 0, canvas.width, canvas.height);
+        if (selectFrontHair) {
+            const frontHairImage = new Image();
+            frontHairImage.src = selectFrontHair;
+            frontHairImage.onload = () => {
+                ctx.drawImage(frontHairImage, 0, 0, canvas.width, canvas.height);
+            };
+        }
+        if (selectBackHair) {
+            const backHairImage = new Image();
+            backHairImage.src = selectBackHair;
+            backHairImage.onload = () => {
+                ctx.drawImage(backHairImage, 0, 0, canvas.width, canvas.height);
             };
         }
         if (selectAccessories) {
@@ -288,59 +284,6 @@ function redrawCharacter() {
     }
 }
 
-
-// // Hàm cập nhật lựa chọn và vẽ lại canvas
-// function loadImageToCanvas(category, imageUrl){
-//     characterOptions[category] = imageUrl;
-//     randomRedrawCharacter();
-// }
-
-// function randomRedrawCharacter() {
-//     const canvas = document.getElementById('canvas');
-//     const ctx = canvas.getContext('2d');
-
-//     ctx.clearRect(0, 0, canvas.width, canvas.height); // Xóa canvas trước khi vẽ lại
-
-//     // Vẽ nền trắng sau lưng hình ảnh nhân vật
-//     ctx.fillStyle = '#ffffff'; // Màu trắng
-//     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-//     // Vẽ background trước (nếu có)
-//     if (characterOptions.background) {
-//         const backgroundImage = new Image();
-//         backgroundImage.src = characterOptions.background;
-//         backgroundImage.onload = () => {
-//             ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
-//             drawCharacterPart(ctx);
-//         };
-//     } else {
-//         drawCharacterPart(ctx);
-//     }
-// }
-
-// function drawCharacterParts(ctx) {
-//     if (baseCharacterLoaded) {
-//         ctx.drawImage(baseCharacterImage, 0, 0, canvas.width, canvas.height);
-//         drawPart(ctx, characterOptions.skin);
-//         drawPart(ctx, characterOptions.face);
-//         drawPart(ctx, characterOptions.clothing);
-//         drawPart(ctx, characterOptions.hair);
-//         drawPart(ctx, characterOptions.accessories);
-//         drawPart(ctx, characterOptions.foreground);
-//     }
-// }
-
-// function drawPart(ctx, partImageUrl) {
-//     if (partImageUrl) {
-//         const partImage = new Image();
-//         partImage.src = partImageUrl;
-//         partImage.onload = () => {
-//             ctx.drawImage(partImage, 0, 0, canvas.width, canvas.height);
-//         };
-//     }
-// }
-
-
 function saveCharacter() {
     // Lưu hình ảnh của nhân vật hiện tại
     const canvas = document.getElementById('character-canvas');
@@ -357,7 +300,8 @@ function resetCharacter() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     loadCharacter();
     selectSkin = null;
-    selectHair = null;
+    selectFrontHair = null;
+    selectBackHair = null;
     selectFace = null;
     selectClothing = null;
     selectAccessories = null;
@@ -365,31 +309,16 @@ function resetCharacter() {
     selectForeground = null;
 }
 
-// Function to randomize options
-// function randomizeOptions() {
-//     const randomSkin = skinOption[Math.floor(Math.random() * skinOption.length)];
-//     const randomFace = faceOption[Math.floor(Math.random() * faceOption.length)];
-//     const randomClothing = clothingOption[Math.floor(Math.random() * clothingOption.length)];
-//     const randomHair = hairOption[Math.floor(Math.random() * hairOption.length)];
-//     const randomAccessories = accessoriesOption[Math.floor(Math.random() * accessoriesOption.length)];
-//     const randomForeground = foregroundOption[Math.floor(Math.random() * foregroundOption.length)];
-//     const randomBackground = backgroundOption[Math.floor(Math.random() * backgroundOption.length)];
-    
-//     loadImageToCanvas('skin', randomSkin);
-//     loadImageToCanvas('face', randomFace);
-//     loadImageToCanvas('clothing', randomClothing);
-//     loadImageToCanvas('hair', randomHair);
-//     loadImageToCanvas('accessories', randomAccessories);
-//     loadImageToCanvas('foreground', randomForeground);
-//     loadImageToCanvas('background', randomBackground);
-// }
+document.addEventListener('DOMContentLoaded', function(){
+    const clothingItem = document.querySelectorAll('.clothing-item');
+    const defaultImage = document.getElementById('meme-loading');
 
-
-// function shareCharacter() {
-//     // Chia sẻ hình ảnh của nhân vật
-//     alert('Tính năng chia sẻ chưa được triển khai.');
-// }
-
+    clothingItem.forEach(item => {
+        item.addEventListener('click', function(){
+            defaultImage.style.display = 'none';
+        });
+    });
+})
 window.onload = () => {
     loadCharacter();
 };
